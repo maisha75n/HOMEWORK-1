@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact — Red Lantern</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="site-header">
+<div class="container nav-wrap">
+<a class="logo" href="index.html">Red <span>Lantern</span></a>
+<button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+<nav id="nav" class="nav">
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About</a>
+<a href="contact.html" class="active">Contact</a>
+</nav>
+</div>
+</header>
+
+
+<main class="container page">
+<h1>Get in Touch</h1>
+
+
+<div class="contact-grid">
+<div class="map-wrap">
+<!-- Google Map embed without API key using query string -->
+<iframe title="Map to Red Lantern" src="https://www.google.com/maps?q=123%20Mott%20St%2C%20New%20York%2C%20NY&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
+
+
+<form class="contact-form" onsubmit="event.preventDefault(); alert('Thanks! Your message has been received.'); this.reset();">
+<div class="field">
+<label for="name">Name</label>
+<input id="name" name="name" type="text" placeholder="Your name" required />
+</div>
+<div class="field">
+<label for="email">Email</label>
+<input id="email" name="email" type="email" placeholder="you@example.com" required />
+</div>
+<div class="field">
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+</div>
+<button class="btn primary" type="submit">Send Message</button>
+</form>
+</div>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<h4>Red Lantern</h4>
+<p>Open Daily: <strong>11:00 AM – 10:00 PM</strong></p>
+</div>
+<div>
+<h4>Follow Us</h4>
+<ul class="socials">
+<li><a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" width="20" /> Facebook</a></li>
+<li><a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" width="20" /> Instagram</a></li>
+<li><a href="#"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" width="20" /> TikTok</a></li>
+</ul>
+</div>
+<div>
+<h4>Visit</h4>
+<p>123 Mott St, New York, NY</p>
+<a class="text-link" href="contact.html">Get Directions →</a>
+</div>
+</div>
+<div class="container copyright">© <span id="year"></span> Red Lantern. All rights reserved.</div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</body>
+</html>
