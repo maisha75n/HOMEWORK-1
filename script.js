@@ -96,19 +96,6 @@ document.addEventListener('click', (e) => {
     const name = target.getAttribute('data-name');
     const price = parseFloat(target.getAttribute('data-price')) || 0;
     addToCart(name, price);
-    return;
-  }
-  // Click anywhere on the menu card or image adds the item
-  const card = target.closest('.card');
-  if (card && !target.closest('.add-to-cart')) {
-    const nameEl = card.querySelector('h3');
-    const priceEl = card.querySelector('.price');
-    if (nameEl && priceEl) {
-      const name = nameEl.textContent.trim();
-      const priceMatch = (priceEl.textContent || '').match(/\$?([0-9]+(?:\.[0-9]{1,2})?)/);
-      const price = priceMatch ? parseFloat(priceMatch[1]) : 0;
-      if (name && price) addToCart(name, price);
-    }
   }
 });
 
