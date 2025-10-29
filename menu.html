@@ -36,6 +36,7 @@
           <h3>Spring Rolls</h3>
           <p>Crispy golden rolls filled with vegetables.</p>
           <div class="price">$6.95</div>
+          <button class="btn add-to-cart" data-name="Spring Rolls" data-price="6.95">Add to Cart</button>
         </div>
       </article>
       <article class="card">
@@ -44,6 +45,7 @@
           <h3>Pork Dumplings</h3>
           <p>Steamed dumplings with savory pork filling.</p>
           <div class="price">$7.95</div>
+          <button class="btn add-to-cart" data-name="Pork Dumplings" data-price="7.95">Add to Cart</button>
         </div>
       </article>
       <article class="card">
@@ -52,6 +54,7 @@
           <h3>Wonton Soup</h3>
           <p>Delicate wontons in a light broth with scallions.</p>
           <div class="price">$5.95</div>
+          <button class="btn add-to-cart" data-name="Wonton Soup" data-price="5.95">Add to Cart</button>
         </div>
       </article>
     </div>
@@ -67,6 +70,7 @@
           <h3>Kung Pao Chicken</h3>
           <p>Spicy stir-fry with peanuts, peppers, and chili.</p>
           <div class="price">$13.95</div>
+          <button class="btn add-to-cart" data-name="Kung Pao Chicken" data-price="13.95">Add to Cart</button>
         </div>
       </article>
       <article class="card">
@@ -75,6 +79,7 @@
           <h3>Beef & Broccoli</h3>
           <p>Tender beef with crisp broccoli in a savory sauce.</p>
           <div class="price">$14.95</div>
+          <button class="btn add-to-cart" data-name="Beef & Broccoli" data-price="14.95">Add to Cart</button>
         </div>
       </article>
       <article class="card">
@@ -83,6 +88,7 @@
           <h3>Chow Mein</h3>
           <p>Stir-fried noodles with vegetables and your choice of protein.</p>
           <div class="price">$12.95</div>
+          <button class="btn add-to-cart" data-name="Chow Mein" data-price="12.95">Add to Cart</button>
         </div>
       </article>
     </div>
@@ -98,6 +104,7 @@
           <h3>Mango Ice Cream</h3>
           <p>Creamy tropical mango delight.</p>
           <div class="price">$4.95</div>
+          <button class="btn add-to-cart" data-name="Mango Ice Cream" data-price="4.95">Add to Cart</button>
         </div>
       </article>
       <article class="card">
@@ -106,11 +113,24 @@
           <h3>Fortune Cookies (4)</h3>
           <p>Crunchy cookies with sweet fortunes inside.</p>
           <div class="price">$3.00</div>
+          <button class="btn add-to-cart" data-name="Fortune Cookies (4)" data-price="3.00">Add to Cart</button>
         </div>
       </article>
     </div>
   </section>
 </main>
+
+<!-- Cart -->
+<section class="cart-section">
+  <div class="container">
+    <h2>Your Cart</h2>
+    <ul id="cart-items" class="cart-items"></ul>
+    <div class="cart-footer">
+      <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+      <button id="clear-cart" class="btn">Clear Cart</button>
+    </div>
+  </div>
+  </section>
 
 <!-- Footer -->
 <footer class="site-footer">
