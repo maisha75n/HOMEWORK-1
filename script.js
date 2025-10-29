@@ -29,6 +29,22 @@ slides.style.transform = `translateX(-${index * 100}%)`;
 }
 
 
+// (Cart logic moved below to run on all pages that include the cart markup)
+function go(step) {
+index = (index + step + images.length) % images.length;
+update();
+}
+
+
+prev.addEventListener('click', () => go(-1));
+next.addEventListener('click', () => go(1));
+
+
+// Auto-advance every 4 seconds
+setInterval(() => go(1), 4000);
+}
+
+
 // Simple Cart (Menu page)
 (function initCart() {
 const cartList = document.getElementById('cart-items');
@@ -108,16 +124,3 @@ if (clearBtn) {
 
 render();
 })();
-function go(step) {
-index = (index + step + images.length) % images.length;
-update();
-}
-
-
-prev.addEventListener('click', () => go(-1));
-next.addEventListener('click', () => go(1));
-
-
-// Auto-advance every 4 seconds
-setInterval(() => go(1), 4000);
-}
