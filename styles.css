@@ -84,9 +84,11 @@
   .card-body h3 { margin: 0; font-size: 1.05rem; }
   .card-body p { margin: 0; color: var(--muted); font-size: .95rem; }
   .price { margin-top: 4px; font-weight: 700; color: var(--accent-2); }
+  /* Add to Cart button visibility */
   .card .add-to-cart { margin-top: 8px; }
   .btn.add-to-cart { background: var(--accent); border-color: var(--accent); color: #fff; }
   .btn.add-to-cart:hover { filter: brightness(.95); }
+  .btn.add-to-cart:focus { outline: 2px solid var(--accent-2); outline-offset: 2px; }
   .card img { cursor: pointer; }
   
   /* About */
