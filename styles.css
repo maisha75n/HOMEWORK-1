@@ -30,6 +30,7 @@
   .nav { display: flex; gap: 20px; }
   .nav a { color: var(--muted); text-decoration: none; font-weight: 600; }
   .nav a:hover, .nav a.active { color: #fff; }
+  #cart-count { color: var(--accent-2); font-weight: 700; }
   .hamburger { display: none; font-size: 1.4rem; background: none; color: #fff; border: none; cursor: pointer; }
   
   /* Hero */
