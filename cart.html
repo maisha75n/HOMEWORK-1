@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About — Red Lantern</title>
+  <title>Your Cart — Red Lantern</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,40 +17,26 @@
     <nav id="nav" class="nav">
       <a href="index.html">Home</a>
       <a href="menu.html">Menu</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-<a href="cart.html">Cart</a>
+      <a href="cart.html" class="active">Cart</a>
     </nav>
   </div>
 </header>
 
 <main class="container page">
-  <h1>Our Story</h1>
-  <div class="about-grid">
-    <div>
-      <p>
-        Welcome to <strong>Red Lantern</strong>, a neighborhood spot inspired by classic Chinese flavors and the warmth of family-style dining. From
-        day one, our focus has been simple: fresh ingredients, time-honored techniques, and generous hospitality.
-      </p>
-      <p>
-        Our signature dishes — from smoky <em>Kung Pao Chicken</em> to comforting <em>Wonton Soup</em> and hearty <em>Chow Mein</em> — are cooked to order in hot woks
-        for deep, satisfying flavor. Whether you’re here for a casual lunch or a lively dinner with friends, we’re thrilled to serve you.
-      </p>
-      <p>
-        Thank you for being part of our story. We can’t wait to cook for you again.
-      </p>
+  <h1>Your Cart</h1>
+  <section class="cart-section" style="border: 0; padding-top: 10px;">
+    <div class="container">
+      <ul id="cart-items" class="cart-items"></ul>
+      <div class="cart-footer">
+        <div class="cart-total">Total: $<span id="cart-total">0.00</span></div>
+        <button id="clear-cart" class="btn primary">Clear Cart</button>
+      </div>
     </div>
-    <div>
-      <img src="https://images.unsplash.com/photo-1624184026605-f050ebe70188?q=80&w=1771&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-           alt="Team working behind the counter"
-           class="rounded"
-           loading="lazy"
-           referrerpolicy="no-referrer" />
-    </div>
-  </div>
+  </section>
 </main>
 
-<!-- Footer -->
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -77,3 +63,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
