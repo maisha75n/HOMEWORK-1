@@ -45,18 +45,32 @@ setInterval(() => go(1), 4000);
 }
 
 
-// Simple Cart (Menu page)
+// Simple Cart (shared between Menu and Cart pages). Persists to localStorage.
 (function initCart() {
+function readCartFromStorage() {
+  try { return JSON.parse(localStorage.getItem('cart') || '{}'); } catch { return {}; }
+}
+function writeCartToStorage(obj) { localStorage.setItem('cart', JSON.stringify(obj)); }
+
 const cartList = document.getElementById('cart-items');
 const clearBtn = document.getElementById('clear-cart');
-if (!cartList) return; // only on menu page
-
 const totalEl = document.getElementById('cart-total');
-const cart = new Map(); // key: name -> { price, quantity }
+
+const cartObj = readCartFromStorage(); // { name: { price, quantity } }
+const cart = new Map(Object.entries(cartObj));
+
+function updateCartCountBadge() {
+  const badge = document.getElementById('cart-count');
+  if (!badge) return;
+  let count = 0;
+  for (const [, item] of cart.entries()) count += item.quantity;
+  badge.textContent = String(count);
+}
 
 function format(n) { return n.toFixed(2); }
 
 function render() {
+  if (!cartList || !totalEl) { updateCartCountBadge(); return; }
   cartList.innerHTML = '';
   let total = 0;
   for (const [name, item] of cart.entries()) {
@@ -94,6 +108,7 @@ function render() {
     cartList.appendChild(li);
   }
   totalEl.textContent = format(total);
+  updateCartCountBadge();
 }
 
 function addToCart(name, price) {
@@ -103,6 +118,9 @@ function addToCart(name, price) {
   } else {
     cart.set(name, { price, quantity: 1 });
   }
+  // persist
+  const obj = Object.fromEntries(cart.entries());
+  writeCartToStorage(obj);
   render();
 }
 
@@ -118,9 +136,11 @@ document.addEventListener('click', (e) => {
 if (clearBtn) {
   clearBtn.addEventListener('click', () => {
     cart.clear();
+    writeCartToStorage({});
     render();
   });
 }
 
 render();
+updateCartCountBadge();
 })();
